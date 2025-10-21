@@ -136,12 +136,11 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
    ```
 3. После входа откроется панель с разделами:
 
+   * Цехи и участки
+   * Кадры и бригады
    * Изделия
-   * Маршруты
-   * Испытания
-   * Цехи / Участки / Бригады
-   * Сотрудники
-   * Лаборатории
+   * Испытательные лаборатории
+   * Личный кабинет
 
 ---
 
@@ -182,6 +181,7 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 **Разработчик:** Андреев Егор
 **Email:** [support@a-auto.local](mailto:support@a-auto.local)
 **Дата:** Октябрь 2025
+
 
 
 
