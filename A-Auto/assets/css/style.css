@@ -1,0 +1,1427 @@
+/* === A-Auto clean theme (top header + hero + modules + KPI + contacts) === */
+:root{
+  --main-blue:#1E3A8A;
+  --accent-blue:#3B82F6;
+  --dark-blue:#0F172A;
+  --light-gray:#F3F4F6;
+  --white:#FFFFFF;
+  --metal-gray:#D1D5DB;
+  --text-dark:#111827;
+  --radius:12px;
+  --transition:.3s ease;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Poppins','Segoe UI',sans-serif;
+  background:linear-gradient(180deg,#E2E8F0,#FFFFFF);
+  color:var(--text-dark);
+  display:flex;flex-direction:column;min-height:100vh;
+}
+
+/* ===== HEADER (top) ===== */
+header{
+  background:linear-gradient(90deg,var(--main-blue),var(--accent-blue));
+  color:#fff; display:flex; justify-content:space-between; align-items:center;
+  padding:20px 50px; box-shadow:0 4px 16px rgba(0,0,0,.2);
+}
+header h1{margin:0; font-size:26px; font-weight:600; letter-spacing:1px;}
+nav{display:flex; gap:25px;}
+nav a{color:#E0E7FF; text-decoration:none; font-weight:500; position:relative; transition:var(--transition);}
+nav a:hover{color:#fff;}
+nav a::after{content:""; position:absolute; left:0; bottom:-6px; height:2px; width:0; background:#fff; transition:var(--transition);}
+nav a:hover::after{width:100%;}
+
+/* ===== PAGE WRAPPER ===== */
+main{
+  flex:1; max-width:1100px; margin:40px auto; background:#fff; padding:40px 60px;
+  border-radius:var(--radius); box-shadow:0 8px 20px rgba(0,0,0,.1); animation:fadeIn .8s ease;
+}
+@keyframes fadeIn{from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);}}
+
+/* ===== TYPO ===== */
+h2{color:var(--main-blue); border-left:6px solid var(--accent-blue); padding-left:12px; margin-top:0;}
+p{line-height:1.6; font-size:16px;}
+
+/* ===== TABLES ===== */
+table{width:100%; border-collapse:collapse; margin-top:25px; background:#fff;
+  border-radius:var(--radius); overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,.1);}
+th,td{padding:14px 18px; border-bottom:1px solid var(--metal-gray); text-align:left;}
+th{background:var(--main-blue); color:#fff; font-size:14px; text-transform:uppercase;}
+tr:hover{background:var(--light-gray);}
+
+/* ===== FORMS & BUTTONS ===== */
+form{margin-top:30px;}
+input,textarea,select{
+  width:100%; padding:12px; border-radius:6px; border:1px solid var(--metal-gray);
+  margin-bottom:18px; font-size:15px; transition:var(--transition);
+}
+input:focus,textarea:focus,select:focus{border-color:var(--accent-blue); box-shadow:0 0 0 3px rgba(59,130,246,.2); outline:none;}
+button,.btn{
+  background:var(--main-blue); color:#fff; border:none; border-radius:8px; padding:10px 20px;
+  cursor:pointer; font-weight:500; transition:var(--transition);
+}
+button:hover,.btn:hover{background:var(--accent-blue); transform:translateY(-2px); box-shadow:0 4px 12px rgba(0,0,0,.2);}
+
+/* ===== FOOTER ===== */
+footer{
+  background:var(--dark-blue); color:#E2E8F0; text-align:center; padding:20px; font-size:14px;
+  margin-top:auto; box-shadow:0 -3px 12px rgba(0,0,0,.1);
+}
+
+/* ===== NOTICES (optional) ===== */
+.message{
+  position:fixed; bottom:20px; right:20px; padding:14px 20px; border-radius:8px; color:#fff;
+  font-weight:500; box-shadow:0 4px 10px rgba(0,0,0,.25); animation:fadeIn .4s ease;
+}
+.message.success{background:#16A34A;} .message.error{background:#DC2626;}
+
+/* ===== HERO BANNER ===== */
+.hero-banner{
+  height:220px; border-radius:14px; overflow:hidden; background-size:cover; background-position:center;
+  box-shadow:0 8px 24px rgba(0,0,0,.12); position:relative; margin-bottom:22px;
+}
+.hero-overlay{
+  position:absolute; inset:0; background:linear-gradient(0deg,rgba(0,0,0,.45),rgba(0,0,0,.15));
+  color:#fff; display:flex; flex-direction:column; justify-content:flex-end; padding:22px 24px;
+}
+.hero-overlay h1{margin:0 0 6px; font-size:28px; font-weight:700;}
+.hero-overlay p{margin:0; opacity:.95;}
+
+/* ===== MODULE CARDS (главные разделы) ===== */
+.modules{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:22px; margin:22px 0;
+}
+.module-card{
+  display:flex; flex-direction:column; background:#fff; border-radius:12px; overflow:hidden;
+  text-decoration:none; color:inherit; border:1px solid #e5e7eb;
+  box-shadow:0 6px 16px rgba(0,0,0,.08);
+  transition:transform .25s, box-shadow .25s, border-color .25s;
+}
+.module-card:hover{transform:translateY(-6px); box-shadow:0 14px 28px rgba(0,0,0,.15); border-color:#d1d5db;}
+.module-img{height:150px; background-size:cover; background-position:center;}
+.module-body{padding:14px 16px;}
+.module-body h3{margin:0 0 6px; color:var(--main-blue);}
+.module-body p{margin:0; color:#374151; font-size:14px;}
+
+/* ===== KPI STATS ===== */
+.stats{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:16px; margin:18px 0 22px;
+}
+.kpi{
+  background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:18px; text-align:center;
+  box-shadow:0 6px 16px rgba(0,0,0,.06);
+}
+.kpi-num{font-size:34px; font-weight:800; color:var(--main-blue); margin-bottom:6px;}
+.kpi-label{color:#6b7280; font-size:14px;}
+
+/* ===== CONTACTS ===== */
+.contacts{
+  background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:18px;
+  box-shadow:0 6px 16px rgba(0,0,0,.06);
+}
+.contacts h3{margin-top:0; color:var(--main-blue);}
+.contacts-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+
+
+@media(max-width:920px){.contacts-grid{grid-template-columns:1fr;}}
+
+
+
+/* ===== Departments ===== */
+.departments-section h2 { margin-bottom: 10px; }
+.actions-bar { display: flex; justify-content: space-between; align-items: center; margin: 20px 0; }
+.search-form input { padding: 8px 10px; width: 280px; border-radius: 6px; border: 1px solid #ccc; }
+.search-form button { margin-left: 10px; }
+.add-btn { background-color: #16A34A; }
+.add-btn:hover { background-color: #22C55E; }
+.edit-btn { background-color: #3B82F6; }
+.delete-btn { background-color: #DC2626; }
+
+/* Модальное окно */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center; align-items: center;
+}
+.modal-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+.modal-actions { display: flex; justify-content: space-between; margin-top: 20px; }
+
+
+i[data-lucide] {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+  margin-right: 8px;
+}
+
+/* Единый стиль кнопок с иконками */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+.add-btn i,
+.edit-btn i,
+.delete-btn i {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.2;
+  position: relative;
+  top: 0;
+}
+
+
+.add-btn i { stroke: #16A34A; }
+
+/* Кнопка поиска со значком */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+i[data-lucide] {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2;
+  vertical-align: middle;
+}
+
+.search-btn i { stroke: #ffffff; }       /* белая иконка внутри синей/зелёной кнопки */
+.search-form button.btn {
+  background: var(--main-blue);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+}
+.search-form button.btn:hover {
+  background: var(--accent-blue);
+}
+
+.modal-lg { width: 820px; max-width: 95vw; }
+.small-btn { padding: 8px 12px; border-radius: 8px; }
+.modal .actions-bar { justify-content: flex-start; gap: 10px; }
+
+
+/* ==== КНОПКИ В МОДАЛКЕ (участки) ==== */
+.modal-actions {
+  display: flex;
+  justify-content: flex-start;
+  gap: 14px; /* расстояние между кнопками */
+  margin-top: 20px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* — престижные цвета — */
+.btn.add-btn {
+  background: linear-gradient(90deg, #2E7DFF, #0055D4);
+  color: white;
+}
+.btn.add-btn:hover {
+  background: linear-gradient(90deg, #0055D4, #2E7DFF);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 85, 212, 0.35);
+}
+
+.btn.cancel {
+  background: #E5E7EB;
+  color: #1E3A8A;
+}
+.btn.cancel:hover {
+  background: #CBD5E1;
+}
+
+.btn.edit-btn {
+  background: #3B82F6;
+  color: white;
+}
+.btn.edit-btn:hover {
+  background: #2563EB;
+}
+
+.btn.delete-btn {
+  background: #EF4444;
+  color: white;
+}
+.btn.delete-btn:hover {
+  background: #DC2626;
+}
+
+/* Иконки внутри кнопок */
+.btn i[data-lucide] {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2;
+}
+
+
+/* Ровная строка поиска: input и кнопка одной высоты */
+.search-form {
+  display: inline-flex;          /* ставим в одну линию */
+  align-items: center;           /* выравниваем по центру */
+  gap: 8px;                      /* небольшой зазор (можно 0) */
+}
+
+.search-form input[type="text"],
+.search-form .btn.search-btn {
+  height: 40px;                  /* одинаковая высота */
+  box-sizing: border-box;        /* учитываем бордеры в высоту */
+  font-size: 14px;
+  line-height: 1;                /* убираем влияние line-height */
+}
+
+/* поле */
+.search-form input[type="text"] {
+  padding: 0 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+}
+
+/* кнопка */
+.search-form .btn.search-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 16px;               /* без вертикальных паддингов */
+  border: none;
+  border-radius: 8px;
+  background: var(--main-blue);
+  color: #fff;
+  cursor: pointer;
+}
+
+/* иконка лупы внутри кнопки */
+.search-form .btn.search-btn i[data-lucide]{
+  width: 18px; height: 18px; stroke-width: 2; margin-right: 6px;
+}
+
+/* === FIX: выровнять поле и кнопку поиска по высоте === */
+.search-form{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;              /* можно 0, если хочешь прилегание */
+}
+
+.search-form input[type="text"]{
+  height:44px;           /* одинаковая высота */
+  padding:0 14px;
+  font-size:14px;
+  line-height:44px;      /* выравнивание плейсхолдера по центру */
+  border:1px solid #d1d5db;
+  border-radius:8px;
+  box-sizing:border-box;
+  margin:0 !important;   /* САМЫЙ ВАЖНЫЙ СБРОС: убираем margin-bottom из глобального input */
+}
+
+.search-form .btn.search-btn{
+  height:44px;           /* та же высота */
+  padding:0 18px;        /* убираем вертикальные паддинги от .btn */
+  line-height:44px;      /* центрирование текста */
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:8px;
+  margin:0;              /* на всякий случай */
+  background:var(--main-blue);
+  color:#fff;
+  border:none;
+}
+
+.search-form .btn.search-btn i[data-lucide]{
+  width:18px; height:18px; stroke-width:2; margin-right:8px;
+}
+
+/* === Выровнять строку поиска и кнопку "Добавить цех" === */
+.actions-bar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;     /* важно: выравниваем по центру по вертикали */
+  gap: 16px;
+}
+
+.search-form{              /* левый блок */
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;               /* чтобы форма не "сползала" */
+}
+
+.search-form input[type="text"],
+.search-form .btn.search-btn,
+.actions-bar .add-btn{
+  height: 44px;            /* одна высота у всех трёх элементов */
+  box-sizing: border-box;
+}
+
+/* Кнопка "Добавить цех" – такая же высота и выравнивание по центру */
+.actions-bar .add-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 18px;         /* убираем вертикальные паддинги */
+  line-height: 44px;
+  margin: 0;               /* на всякий случай */
+  border-radius: 8px;
+}
+
+.actions-bar .add-btn i[data-lucide]{
+  width: 18px;
+  height: 18px;
+  stroke-width: 2;
+  margin-right: 8px;
+}
+
+
+/* ===== Responsive table wrapper ===== */
+.table-wrap{
+  width:100%;
+  overflow-x:auto;                   /* горизонтальная прокрутка при узком экране */
+  border-radius:10px;
+  box-shadow: var(--shadow-sm);      /* тень на контейнер, а не на таблицу */
+}
+.table-wrap table{ box-shadow:none; }/* убираем вторую тень у самой таблицы */
+
+/* Неразрывные колонки */
+.table-employees th:nth-last-child(2),
+.table-employees td:nth-last-child(2), /* статус */
+.table-employees th:last-child,
+.table-employees td:last-child{        /* действия */
+  white-space: nowrap;
+}
+
+/* Красивые компактные кнопки действий */
+td.actions{
+  white-space:nowrap;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+/* ====== АДАПТИВ ДЛЯ ТАБЛИЦЫ СОТРУДНИКОВ ====== */
+
+/* контейнер со скроллом и скруглением, чтоб ничего не "выпирало" */
+.table-wrap{
+  width:100%;
+  overflow-x:auto;
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+  background:#fff;                 /* фон за пределами таблицы */
+}
+.table-wrap::-webkit-scrollbar{ height:8px; }
+.table-wrap::-webkit-scrollbar-thumb{ background:#c7d2fe; border-radius:8px; }
+
+/* сама таблица – без тени, вписывается по ширине карточки */
+.table-employees{
+  width:100%;
+  min-width:0;                     /* ВАЖНО: убираем прежний min-width:1080px */
+  table-layout:fixed;              /* фиксированная сетка -> нет "прыжков" */
+  border-collapse:collapse;
+  margin:0;
+  box-shadow:none;
+}
+
+/* базовая типографика таблицы */
+.table-employees th,
+.table-employees td{
+  padding:12px 14px;
+  border-bottom:1px solid var(--metal-gray);
+  text-align:left;
+  vertical-align:middle;
+  word-break:break-word;           /* переносим длинные значения */
+}
+.table-employees th{
+  background:var(--main-blue);
+  color:#fff;
+  text-transform:uppercase;
+  font-size:13px;
+}
+
+/* распределяем ширину по столбцам (чтобы не распирало) */
+.table-employees th:nth-child(1){ width:50px; }        /* ID */
+.table-employees th:nth-child(2){ width:200px; }       /* ФИО */
+.table-employees th:nth-child(3){ width:150px; }       /* Должность */
+.table-employees th:nth-child(4){ width:120px; }       /* Категория */
+.table-employees th:nth-child(5){ width:150px; }       /* Проф./разряд */
+.table-employees th:nth-child(6){ width:90px; }        /* Стаж */
+.table-employees th:nth-child(7){ width:140px; }       /* Цех */
+.table-employees th:nth-child(8){ width:140px; }       /* Участок */
+.table-employees th:nth-child(9){ width:120px; }       /* Бригада */
+.table-employees th:nth-child(10){ width:110px; }      /* Статус */
+.table-employees th:nth-child(11){ width:110px; }      /* Действия */
+
+/* последняя колонка и "статус" не переносятся, чтобы было аккуратно */
+.table-employees td:nth-child(10),
+.table-employees td:nth-child(11){
+  white-space:nowrap;
+}
+
+/* ряд действий: компактные "синие/красные" как в остальном UI */
+td.actions{
+  display:flex; gap:8px; align-items:center; white-space:nowrap;
+}
+td.actions .btn{
+  height:36px; padding:0 10px; border-radius:8px;
+  display:inline-flex; align-items:center; justify-content:center;
+}
+td.actions .btn i[data-lucide]{ width:18px; height:18px; stroke-width:2; }
+
+/* верхняя панель поиска/кнопок – одинаковая высота элементов */
+.actions-bar{ display:flex; justify-content:space-between; align-items:center; gap:16px; }
+.search-form{ display:inline-flex; align-items:center; gap:10px; margin:0; }
+.search-form input[type="text"],
+.search-form .btn.search-btn,
+.actions-bar .add-btn{ height:44px; box-sizing:border-box; }
+
+
+/* ===== Исправление: прокрутка длинных модалок ===== */
+.modal-content.modal-lg {
+  max-height: 90vh;          /* ограничиваем высоту окна до 90% экрана */
+  overflow-y: auto;           /* включаем вертикальную прокрутку */
+  scrollbar-width: thin;      /* тонкий скролл в Firefox */
+  scrollbar-color: #93c5fd #f3f4f6; /* цвета скролла */
+}
+
+/* Красивый скроллбар для WebKit-браузеров (Chrome/Edge) */
+.modal-content.modal-lg::-webkit-scrollbar {
+  width: 8px;
+}
+.modal-content.modal-lg::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 8px;
+}
+.modal-content.modal-lg::-webkit-scrollbar-thumb {
+  background-color: #93c5fd;
+  border-radius: 8px;
+}
+
+/* Немного расстояния между таблицей и формой */
+#brigadesWrap {
+  margin-bottom: 20px;
+}
+
+
+.scroll-table {
+  border-radius: 8px;
+  overflow-y: auto;
+  max-height: 420px;
+}
+.scroll-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+}
+.login-form input {
+  padding: 10px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 15px;
+}
+.login-form button {
+  margin-top: 10px;
+}
+
+/* ==== LOGIN PAGE ==== */
+.login-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+}
+
+.login-card {
+  background: #fff;
+  padding: 35px 45px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.1);
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+}
+
+.login-card h2 {
+  margin-bottom: 10px;
+  color: var(--main-blue);
+}
+
+.login-subtext {
+  color: #6b7280;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-group {
+  text-align: left;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.full-width {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.login-form button i {
+  margin-right: 8px;
+}
+
+.login-error {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-top: -4px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  text-align: left;
+}
+
+
+/* ===== LOGIN PAGE ===== */
+body.login-page {
+  background: linear-gradient(180deg, #E2E8F0, #FFFFFF);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.login-container {
+  max-width: 400px;
+  margin: 100px auto;
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.login-container h2 {
+  color: var(--main-blue);
+  margin-bottom: 8px;
+}
+
+.login-container p {
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+.form-box {
+  background: #F9FAFB;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.03);
+  text-align: left;
+}
+
+.form-box label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.form-box input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 15px;
+}
+
+.form-box input:focus {
+  border-color: #3B82F6;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59,130,246,.2);
+}
+
+.error-box {
+  background: #FEE2E2;
+  color: #991B1B;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.login-btn {
+  width: 100%;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, var(--accent-blue), var(--main-blue));
+}
+
+.account-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background: linear-gradient(180deg, #e2e8f0, #ffffff);
+  min-height: 80vh;
+}
+
+.account-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px 50px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 550px;
+  animation: fadeIn 0.7s ease;
+}
+
+.account-card h2 {
+  color: var(--main-blue, #1d4ed8);
+  margin-bottom: 15px;
+  border-left: 6px solid var(--accent-blue, #3b82f6);
+  padding-left: 12px;
+  font-size: 1.6rem;
+}
+
+.welcome {
+  margin-bottom: 25px;
+  font-size: 17px;
+  color: #374151;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--light-gray, #f8fafc);
+  border-radius: 10px;
+  padding: 18px 22px;
+  margin-bottom: 30px;
+}
+
+.info-item {
+  font-size: 15px;
+  color: #1e293b;
+}
+
+.info-item span {
+  font-weight: 600;
+  color: var(--main-blue, #1d4ed8);
+  margin-right: 6px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn.logout-btn {
+  background: #ef4444;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.btn.logout-btn:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
+}
+
+.btn.back-btn {
+  background: var(--main-blue, #1d4ed8);
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.btn.back-btn:hover {
+  background: var(--accent-blue, #3b82f6);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Адаптация под телефоны */
+@media (max-width: 600px) {
+  .account-card {
+    padding: 30px 25px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+/* === PRODUCTS TABLE (исправленный, финальный) === */
+.table-wrap {
+  overflow-x: auto;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+/* Таблица */
+.table-employees {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  font-size: 15px;
+}
+
+/* Заголовки */
+.table-employees thead {
+  background: var(--main-blue, #1e3a8a);
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.table-employees th,
+.table-employees td {
+  border-bottom: 1px solid #d1d5db;
+  padding: 10px 14px;
+  vertical-align: middle;
+  text-align: left;
+  word-break: break-word;
+  white-space: normal;
+}
+
+.table-employees tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* === Ширина столбцов === */
+.table-employees th:nth-child(1),
+.table-employees td:nth-child(1) { width: 50px; text-align: center; }   /* ID */
+.table-employees th:nth-child(2),
+.table-employees td:nth-child(2) { width: 140px; text-align: center; }  /* Модель */
+.table-employees th:nth-child(3),
+.table-employees td:nth-child(3) { width: 120px; text-align: revert-layer; }  /* Серийный номер */
+.table-employees th:nth-child(4),
+.table-employees td:nth-child(4) { width: 130px; text-align: center;}  /* Категория */
+.table-employees th:nth-child(5),
+.table-employees td:nth-child(5) { width: 130px;text-align: center; }  /* Цех */
+.table-employees th:nth-child(6),
+.table-employees td:nth-child(6) { width: 160px; text-align: center;}  /* Участок */
+.table-employees th:nth-child(7),
+.table-employees td:nth-child(7) { width: 120px; text-align: center; } /* Дата */
+.table-employees th:nth-child(8),
+.table-employees td:nth-child(8) { text-align: center; }  /* Количество */
+.table-employees th:nth-child(9),
+.table-employees td:nth-child(9) { width: 130px; text-align: center; } /* Статус */
+.table-employees th:nth-child(10),
+.table-employees td:nth-child(10) { width: 250px; text-align: center;} /* Примечания */
+.table-employees th:nth-child(11),
+.table-employees td:nth-child(11) { width: 130px; text-align: center; } /* Действия */
+
+/* === Кнопки действий === */
+.table-employees td.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+.table-employees td.actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  transition: background 0.2s ease;
+}
+
+.table-employees .edit-btn {
+  background: #2563eb;
+}
+.table-employees .edit-btn:hover {
+  background: #1d4ed8;
+}
+
+.table-employees .delete-btn {
+  background: #dc2626;
+}
+.table-employees .delete-btn:hover {
+  background: #b91c1c;
+}
+
+.table-employees td.actions .btn i[data-lucide] {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2;
+}
+
+
+/* === Идеальное выравнивание кнопок "Просмотр / Редактировать / Удалить" === */
+
+/* Каждая строка — выравнивание элементов по центру */
+.table-employees tr {
+  display: table-row;
+  height: 70px;
+  vertical-align: middle;
+}
+
+/* Все ячейки — по центру */
+.table-employees td {
+  vertical-align: middle;
+  padding: 12px 10px;
+}
+
+/* Обеспечиваем одинаковую высоту и расположение */
+.table-employees td button,
+.table-employees td .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+/* Кнопка "Просмотр" */
+.table-employees td button.small-btn {
+  background: #2563eb;
+  color: #fff;
+  padding: 0 16px;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.table-employees td button.small-btn:hover {
+  background: #1e40af;
+}
+
+/* Контейнер кнопок "Редактировать" и "Удалить" */
+.table-employees td.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  padding: 8px 0;
+  min-width: 140px;
+}
+
+/* Кнопка редактирования */
+.table-employees td .edit-btn {
+  background: #2563eb;
+  color: #fff;
+
+}
+.table-employees td .edit-btn:hover {
+  background: #1e40af;
+}
+
+/* Кнопка удаления */
+.table-employees td .delete-btn {
+  background: #dc2626;
+  color: #fff;
+}
+.table-employees td .delete-btn:hover {
+  background: #991b1b;
+}
+
+/* Иконки внутри кнопок */
+.table-employees td .btn i[data-lucide],
+.table-employees td button i[data-lucide] {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+}
+
+/* Чтобы таблица не обрезала кнопки */
+.table-wrap {
+  overflow-x: auto;
+  overflow-y: visible !important;
+}
+
+/* === Выровненные кнопки в строке таблицы лабораторий === */
+
+.lab-actions {
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px 0;
+}
+
+.lab-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* расстояние между кнопками */
+}
+
+/* Все кнопки одинаковые */
+.lab-buttons .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  height: 42px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Просмотр */
+.lab-buttons .small-btn {
+  background: #2563eb;
+  padding: 0 14px;
+}
+.lab-buttons .small-btn:hover { background: #1e40af; }
+
+/* Редактировать */
+.lab-buttons .edit-btn {
+  background: #2563eb;
+  width: 42px;
+}
+.lab-buttons .edit-btn:hover { background: #1e40af; }
+
+/* Удалить */
+.lab-buttons .delete-btn {
+  background: #dc2626;
+  width: 42px;
+}
+.lab-buttons .delete-btn:hover { background: #991b1b; }
+
+/* Иконки */
+.lab-buttons i[data-lucide] {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+}
+
+
+/* === Кнопки лабораторий: Просмотр / Редактировать / Удалить === */
+.lab-actions {
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px 0;
+}
+
+.lab-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Все кнопки — одинаковая высота */
+.lab-buttons .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  height: 42px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+  color: #fff;
+}
+
+/* Просмотр */
+.lab-buttons .small-btn {
+  background: #2563eb;
+  padding: 0 16px;
+}
+.lab-buttons .small-btn:hover { background: #1e40af; }
+
+/* Редактировать */
+.lab-buttons .edit-btn {
+  background: #2563eb;
+  width: 42px;
+}
+.lab-buttons .edit-btn:hover { background: #1e40af; }
+
+/* Удалить */
+.lab-buttons .delete-btn {
+  background: #dc2626;
+  width: 42px;
+}
+.lab-buttons .delete-btn:hover { background: #991b1b; }
+
+/* Иконки */
+.lab-buttons i[data-lucide] {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+}
+
+/* === Выровненные кнопки в таблице лабораторий === */
+.lab-actions {
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px 0;
+  white-space: nowrap;
+}
+
+.lab-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Кнопки одинакового размера */
+.lab-buttons .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  height: 42px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+  color: #fff;
+}
+
+/* Просмотр */
+.lab-buttons .small-btn {
+  background: #2563eb;
+  padding: 0 16px;
+}
+.lab-buttons .small-btn:hover { background: #1e40af; }
+
+/* Редактировать */
+.lab-buttons .edit-btn {
+  background: #2563eb;
+  width: 42px;
+  height: 42px;
+}
+.lab-buttons .edit-btn:hover { background: #1e40af; }
+
+/* Удалить */
+.lab-buttons .delete-btn {
+  background: #dc2626;
+  width: 42px;
+}
+.lab-buttons .delete-btn:hover { background: #991b1b; }
+
+/* === Увеличенные иконки в кнопках лабораторий === */
+.lab-buttons .btn i[data-lucide],
+.table-employees td.actions .btn i[data-lucide] {
+  width: 28px !important;
+  height: 28px !important;
+  stroke-width: 1.6 !important;
+  flex-shrink: 0;
+  transform: scale(1.1); /* немного увеличиваем визуально */
+}
+
+
+
+
+/* Модалка оборудования — кнопка Закрыть справа */
+#equipmentModal .modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* === Lucide: правильный размер иконок (svg.lucide) === */
+.lab-buttons .btn .lucide,
+.table-employees td.actions .btn .lucide,
+.table-employees td button.small-btn .lucide {
+  width: 26px !important;
+  height: 26px !important;
+  stroke-width: 2.1 !important;
+  flex-shrink: 0;
+}
+
+/* Ровное выравнивание в строках таблицы */
+.table-employees td { vertical-align: middle; }
+
+/* Кнопки действий — всегда рядом и по центру */
+.table-employees td.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+/* Кнопка «Просмотр» такой же высоты, как action-кнопки */
+.table-employees td button.small-btn {
+  height: 42px;
+  padding: 0 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* === Размер иконок в таблице изделий (products) === */
+.table-employees td.actions .btn .lucide,
+.table-employees td button.small-btn .lucide {
+  width: 22px !important;
+  height: 22px !important;
+  stroke-width: 2 !important;
+}
+
+/* На всякий случай обнулим старые правила для <i data-lucide> в actions */
+.table-employees td.actions i[data-lucide] {
+  width: auto !important;
+  height: auto !important;
+}
+
+/* ——— Products: крупные иконки в колонке ДЕЙСТВИЯ ——— */
+.table-employees td.actions .btn {
+  width: 44px;        /* больше кнопка */
+  height: 44px;
+}
+
+/* lucide генерит <svg class="lucide ..."> — увеличиваем его */
+.table-employees td.actions .btn svg.lucide {
+  width: 24px !important;
+  height: 24px !important;
+  stroke-width: 2 !important;
+}
+
+/* на всякий случай перекроем старые стили для <i data-lucide> */
+.table-employees td.actions .btn i[data-lucide] {
+  width: 24px !important;
+  height: 24px !important;
+  stroke-width: 2 !important;
+}
+
+/* чтобы место под кнопки было достаточно широким */
+.table-employees th:last-child,
+.table-employees td:last-child {
+  min-width: 140px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+
+/* --- FIX: иконки действий видимые и нужного размера --- */
+
+/* Кнопки в таблице изделий */
+.table-employees td.actions .btn {
+  width: 44px;
+  height: 44px;
+}
+
+/* Белая обводка и размер для Lucide svg в действиях (products) */
+.table-employees td.actions .btn svg.lucide,
+.table-employees td.actions .btn i[data-lucide] {
+  width: 24px !important;
+  height: 24px !important;
+  stroke-width: 2 !important;
+  stroke: #fff !important;              /* ВАЖНО: белый штрих */
+}
+
+/* Точно так же для лабораторий */
+.lab-buttons .btn svg.lucide,
+.lab-buttons .btn i[data-lucide] {
+  width: 24px !important;
+  height: 24px !important;
+  stroke-width: 2 !important;
+  stroke: #fff !important;              /* белый штрих */
+}
+
+/* На всякий случай — ширина колонки ДЕЙСТВИЯ */
+.table-employees th:last-child,
+.table-employees td:last-child {
+  min-width: 140px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* === product-tests: фикс колонок, чтобы кнопки не наезжали === */
+.table-employees.tests-table {
+  table-layout: fixed; /* жёсткая сетка */
+}
+
+/* Лаборатория, Дата, Исполнитель, Результат — компактные */
+.table-employees.tests-table th:nth-child(2),
+.table-employees.tests-table td:nth-child(2) { width: 180px; }
+.table-employees.tests-table th:nth-child(3),
+.table-employees.tests-table td:nth-child(3) { width: 120px; text-align:center; }
+.table-employees.tests-table th:nth-child(4),
+.table-employees.tests-table td:nth-child(4) { width: 180px; }
+.table-employees.tests-table th:nth-child(5),
+.table-employees.tests-table td:nth-child(5) { width: 120px; text-align:center; }
+
+/* Протокол — умеренно широкий, переносим строки */
+.table-employees.tests-table th:nth-child(6),
+.table-employees.tests-table td:nth-child(6) {
+  width: 200px;
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* Комментарий — основной текст, переносим и даём ширину */
+.table-employees.tests-table th:nth-child(7),
+.table-employees.tests-table td:nth-child(7) {
+  width: 280px;
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* Действия — фиксированная ширина, кнопки по центру и в ряд */
+.table-employees.tests-table th:last-child,
+.table-employees.tests-table td:last-child {
+  width: 150px;
+  min-width: 150px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.table-employees.tests-table td.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  overflow: visible;
+}
+
+/* сами кнопки в действиях — одинаковый размер */
+.table-employees.tests-table td.actions .btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.table-employees.tests-table td.actions .btn .lucide,
+.table-employees.tests-table td.actions .btn i[data-lucide]{
+  width: 22px !important;
+  height: 22px !important;
+  stroke-width: 2 !important;
+}
+
+/* если экран узкий — разрешаем горизонтальный скролл таблицы */
+.table-wrap { overflow-x: auto; overflow-y: visible; }
+
+/* верхняя панель на этой странице — разрешим перенос */
+.actions-bar { flex-wrap: wrap; gap: 12px; }
+
+
+/* Таблица испытаний: ширины + чтобы кнопки не наезжали */
+.tests-table th:nth-child(1),
+.tests-table td:nth-child(1){ width:60px; text-align:center; }
+.tests-table th:nth-child(2),
+.tests-table td:nth-child(2){ width:220px; }
+.tests-table th:nth-child(3),
+.tests-table td:nth-child(3){ width:140px; text-align:center; }
+.tests-table th:nth-child(4),
+.tests-table td:nth-child(4){ width:200px; }
+.tests-table th:nth-child(5),
+.tests-table td:nth-child(5){ width:140px; text-align:center; }
+.tests-table th:nth-child(6),
+.tests-table td:nth-child(6){ width:180px; }
+.tests-table th:nth-child(7),
+.tests-table td:nth-child(7){ width:260px; }
+
+.tests-table th:last-child,
+.tests-table td:last-child{
+  width:140px;
+  min-width:140px;
+  white-space:nowrap;
+  text-align:center;
+}
+
+.tests-table td.actions{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+  white-space:nowrap;
+}
+
+.tests-table td.actions .btn{
+  width:36px;
+  height:36px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:8px;
+}
+
+.tests-table td.actions .btn .lucide,
+.tests-table td.actions .btn i[data-lucide]{
+  width:20px !important;
+  height:20px !important;
+  stroke-width:2 !important;
+}
+
+
+
