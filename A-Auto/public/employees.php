@@ -272,4 +272,3 @@ $brigs = $pdo->query("SELECT b.id, CONCAT(s.name,' → ',b.name) AS name
 </style>
 
 <?php include '../includes/footer.php'; ?>
-departments-handler.php
